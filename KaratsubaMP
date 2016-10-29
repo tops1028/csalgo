@@ -1,0 +1,64 @@
+package karatsubamp;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author cpisidro
+ */
+public class KaratsubaMP {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        // TODO code application logic here
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter x:");
+        int x = sc.nextInt();
+        System.out.println("Enter y:");
+        int y = sc.nextInt();
+
+        int[] xa = new int[4];
+        int[] ya = new int[4];
+
+        for (int i = 0; i < xa.length; i++) {
+            xa[i] = x % 10;
+            x = x / 10;
+        }
+        for (int i = 0; i < xa.length; i++) {
+            ya[i] = y % 10;
+            y = y / 10;
+        }
+
+        int a = xa[0] * 10 + xa[1];
+        int b = xa[2] * 10 + xa[3];
+        int c = ya[0] * 10 + ya[1];
+        int d = ya[2] * 10 + ya[3];
+
+        int ac = (a * c * 1000);
+        int adbc = ((b * c + a * d) * 100);
+        int bd = b * d;
+        int total = ac + adbc + bd;
+
+        if (ac > 1000) {
+            ac = ac * 10;
+        } else {
+            ac = ac * 100;
+        }
+
+        if (adbc > 1000) {
+            adbc = adbc * 1;
+        } else {
+            adbc = adbc * 10;
+        }
+
+        int ttl = (ac + adbc + bd);
+
+        System.out.println(a + " " + b + " " + c + " " + d);
+        System.out.println(ac + " " + adbc + " " + bd);
+        System.out.println(ttl);
+
+    }
+
+}
