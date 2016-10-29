@@ -1,4 +1,4 @@
-package peso;
+package coins;
 
 import java.util.Scanner;
 
@@ -6,7 +6,7 @@ import java.util.Scanner;
  *
  * @author cpisidro
  */
-public class Peso {
+public class Coins {
 
     public static void main(String[] args) {
         double invalue, c25, p10, p5, p1;
