@@ -1,0 +1,39 @@
+package selectionsort;
+
+import java.util.Scanner;
+
+public class SelectionSort {
+
+    public static void main(String[] args) {
+        int[] selection;
+        int size, min;
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Input size of Array: ");
+        size = sc.nextInt();
+        selection = new int[size];
+
+        for (int in = 0; in < size; in++) {
+            System.out.print("Input value of ");
+            System.out.print(in + 1);
+            System.out.print(":");
+            selection[in] = sc.nextInt();
+        }
+
+        for (int i = 0; i < size; i++) {
+            min = i;
+            for (int i2 = 0; i2 < size; i2++) {
+                if (selection[i2] < selection[min]) {
+                    min = i2;
+                }
+                int temp = selection[i];
+                selection[i] = selection[min];
+                selection[min] = temp;
+            }
+        }
+        for (int i = 0; i < size; i++) {
+            System.out.print(selection[i]);
+
+        }
+    }
+
+}
